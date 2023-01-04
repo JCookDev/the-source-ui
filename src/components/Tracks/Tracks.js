@@ -19,7 +19,7 @@ const Tracks = ({ music }) => {
     });
 
     return(
-        <div className='Tracks'>
+        <div className='tracks-container'>
             {musicCards}
         </div>
     );
