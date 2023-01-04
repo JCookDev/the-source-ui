@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
+import Tracks from '../components/Tracks/Tracks';
 import './App.css';
 
 class App extends Component {
@@ -38,7 +39,7 @@ class App extends Component {
     return(
       <main className='App'>
         <h1>The Source</h1>
-        <Tracks />
+        <Tracks music={this.state.music} />
       </main>
     )
   }
