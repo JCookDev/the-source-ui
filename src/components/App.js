@@ -50,12 +50,19 @@ class App extends Component {
     return (
       <main className="App">
         <header>
-          <h1>The Source</h1>
+          <Link to="/">
+            <h1>The Source</h1>
+          </Link>
+        </header>
+        <Route exact path="/">
           <Link to= "/form" >
             <button className="addMusicButton">Add my Music!</button>
           </Link>
-        </header>
-        <Tracks music={this.state.music} />
+          <Tracks music={this.state.music} />
+        </Route>
+        <Route exact path="/form">
+          <Form />
+        </Route>
       </main>
     );
   }
