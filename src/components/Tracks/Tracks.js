@@ -21,18 +21,16 @@ const Tracks = ({ music }) => {
       />
     );
   });
-  console.log("Music Cards", musicCards);
 
   musicCards.forEach((card) => {
     if (card.props.genre !== lastGenre) {
-      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.id} />);
+      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
     };
-    rows.push(<MusicCardRow musicCard={card} key={card.props.name}/>);
+    rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
 
       lastGenre = card.props.genre;
   });
 
-  console.log("ORGANIZED CARDS", rows);
   return (
     <div>
       <table className="tracks-container">

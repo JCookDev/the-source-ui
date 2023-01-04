@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import { Route, Link } from "react-router-dom";
+import Form from "../components/Form/Form";
 import Tracks from "../components/Tracks/Tracks";
 import "./App.css";
 
@@ -47,7 +49,12 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>The Source</h1>
+        <header>
+          <h1>The Source</h1>
+          <Link to= "/form" >
+            <button className="addMusicButton">Add my Music!</button>
+          </Link>
+        </header>
         <Tracks music={this.state.music} />
       </main>
     );
