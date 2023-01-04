@@ -46,6 +46,10 @@ class App extends Component {
     };
   }
 
+  addMusic = (newMusic) => {
+    this.setState({ music: [...this.state.music, newMusic]})
+  }
+
   render() {
     return (
       <main className="App">
@@ -61,7 +65,7 @@ class App extends Component {
           <Tracks music={this.state.music} />
         </Route>
         <Route exact path="/form">
-          <Form />
+          <Form addMusic={this.addMusic} />
         </Route>
       </main>
     );

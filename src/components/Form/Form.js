@@ -9,12 +9,26 @@ class Form extends Component {
       artist: "",
       genre: "",
       title: "",
-      audioFile: "",
+      audioFile: ""
     }
   }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value})
+  }
+
+  submitMusic = event => {
+    event.preventDefault()
+    const newMusic = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addMusic(newMusic)
+    this.clearForm()
+  }
+
+  clearForm = () => {
+    this.setState({coverArt: "", artist: "", genre: "", title: "", audioFile: ""})
   }
 
   render() {
@@ -38,9 +52,9 @@ class Form extends Component {
 
         <select name="genre" id="genre" onChange={event => this.handleChange(event)}>
           <option value="">Choose your Genre...</option>
-          <option value="hipHop">Hip-Hop</option>
-          <option value="r&B">R&B</option>
-          <option value="blues">Blues</option>
+          <option value="Hip-Hop">Hip-Hop</option>
+          <option value="R&B">R&B</option>
+          <option value="Blues">Blues</option>
         </select>
 
         <input
@@ -59,7 +73,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
 
-        <button>Submit my Music!</button>
+        <button onClick={event => this.submitMusic(event)}>Submit my Music!</button>
       </form>
     )
   }
