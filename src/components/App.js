@@ -19,13 +19,21 @@ class App extends Component {
         {
           id: 2,
           coverArt: "image",
+          artist: "Bob Marley",
+          genre: "Hip-Hop",
+          title: "Sprite",
+          audioFile: "file",
+        },
+        {
+          id: 3,
+          coverArt: "image",
           artist: "Miss Aphrodite",
           genre: "R&B",
           title: "Your Hands",
           audioFile: "file",
         },
         {
-          id: 3,
+          id: 4,
           coverArt: "image",
           artist: "Bobby Blue Bland",
           genre: "Blues",
@@ -40,11 +48,6 @@ class App extends Component {
     return (
       <main className="App">
         <h1>The Source</h1>
-        <h3>Hip-Hop</h3>
-        <Tracks music={this.state.music} />
-        <h3>R&B</h3>
-        <Tracks music={this.state.music} />
-        <h3>Blues</h3>
         <Tracks music={this.state.music} />
       </main>
     );
