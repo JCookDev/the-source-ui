@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from "../Card/Card"
-import "../Tracks/Tracks.css";
+import Card from '../Card/Card';
+import '../Tracks/Tracks.css';
 
 const Tracks = ({ music }) => {
     const musicCards = music.map(song => {
@@ -16,13 +16,13 @@ const Tracks = ({ music }) => {
             />
            
         );
-    })
+    });
 
     return(
         <div className='Tracks'>
             {musicCards}
         </div>
     );
-}
+};
 
 export default Tracks;
