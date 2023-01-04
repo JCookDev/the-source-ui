@@ -51,7 +51,7 @@ class App extends Component {
       <main className="App">
         <header>
           <h1>The Source</h1>
-          <Link to= "/form">
+          <Link to= "/form" >
             <button className="addMusicButton">Add my Music!</button>
           </Link>
         </header>

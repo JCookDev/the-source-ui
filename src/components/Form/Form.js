@@ -45,6 +45,14 @@ class Form extends Component {
 
         <input
           type="text"
+          placeholder="Enter Song Title"
+          name="title"
+          value={this.state.title}
+          onChange={event => this.handleChange(event)}
+        />
+
+        <input
+          type="text"
           placeholder="Enter Audio File Link"
           name="audioFile"
           value={this.state.audioFile}
