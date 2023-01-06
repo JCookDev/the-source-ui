@@ -1,31 +1,36 @@
 .App {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(67, 70, 90, 1) 0%,
+    rgba(68, 74, 98, 1) 25%,
+    rgba(54, 62, 80, 1) 50%,
+    rgba(49, 53, 72, 1) 75%,
+    rgba(35, 38, 51, 1) 100%
+  );
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
   text-align: center;
+  width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  align-items: center;
+  display: flex;
+  height: 88vh;
+  justify-content: center;
+  outline: 1px solid yellow;
+  /* padding-top: 10rem; */
+  width: 100%;
 }
+
+
+/* KEEP FOR IDEAS BUT DELETE IN END */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {

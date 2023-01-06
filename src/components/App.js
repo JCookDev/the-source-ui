@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import Tracks from "../components/Tracks/Tracks";
+import NavBar from "./NavBar/NavBar";
 import "./App.css";
 
 class App extends Component {
@@ -46,10 +47,12 @@ class App extends Component {
 
   render() {
     return (
-      <main className="App">
-        <h1>The Source</h1>
-        <Tracks music={this.state.music} />
-      </main>
+      <div className="App">
+        <NavBar />
+        <main>
+          <Tracks music={this.state.music}/>
+        </main>
+      </div>
     );
   }
 }
