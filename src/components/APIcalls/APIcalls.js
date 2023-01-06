@@ -10,3 +10,13 @@ export const getMusic = () => {
   })
 }
 
+export const postMusic = (newMusic) => {
+  return fetch(`${baseURL}/music`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newMusic)
+  })
+  .then(response => response.json())
+}

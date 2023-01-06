@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import Form from "../components/Form/Form";
 import Tracks from "../components/Tracks/Tracks";
-import { getMusic } from "./APIcalls/APIcalls";
+import { getMusic, postMusic } from "./APIcalls/APIcalls";
 import "./App.css";
 
 class App extends Component {
@@ -26,7 +26,14 @@ class App extends Component {
   }
 
   addMusic = (newMusic) => {
-    this.setState({ music: [...this.state.music, newMusic]})
+    postMusic(newMusic)
+    .then(data => {
+      if(data.id) {
+        this.setState({ music: [...this.state.music, data], error: ""})
+      } else {
+        this.setState({error:"Oops, something went wrong. Please try again later."})
+      }
+    })
   }
 
   render() {
