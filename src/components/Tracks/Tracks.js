@@ -34,11 +34,11 @@ const Tracks = ({ music }) => {
 
   console.log("ORGANIZED CARDS", rows);
   return (
-    <div>
+    <section className="tracks-section">
       <table className="tracks-container">
         <tbody>{rows}</tbody>
       </table>
-    </div>
+    </section>
   );
 };
 
