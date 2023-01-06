@@ -21,6 +21,7 @@ const Tracks = ({ music }) => {
       />
     );
   });
+  
   console.log("Music Cards", musicCards);
 
   musicCards.forEach((card) => {
