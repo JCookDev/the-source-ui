@@ -1,12 +1,12 @@
 import React from "react";
 import Card from "../Card/Card";
-import MusicGenreRow from "../MusicGenreRow/MusicGenreRow";
-import MusicCardRow from "../MusicCardRow/MusicCardRow";
+// import MusicGenreRow from "../MusicGenreRow/MusicGenreRow";
+// import MusicCardRow from "../MusicCardRow/MusicCardRow";
 import "../Tracks/Tracks.css";
 
 const Tracks = ({ music }) => {
-  const rows = [];
-  let lastGenre = null;
+  // const rows = [];
+  // let lastGenre = null;
 
   const musicCards = music.map((song) => {
     return (
@@ -22,21 +22,24 @@ const Tracks = ({ music }) => {
     );
   });
 
-  musicCards.forEach((card) => {
-    if (card.props.genre !== lastGenre) {
-      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
-    }
-    rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
+  // musicCards.forEach((card) => {
+  //   if (card.props.genre !== lastGenre) {
+  //     rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
+  //   }
+  //   rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
     
-    lastGenre = card.props.genre;
-  });
+  //   lastGenre = card.props.genre;
+  // });
 
   return (
-    <div>
-      <table className="tracks-container">
+    <section className="tracks-section">
+      {/* <table className="tracks-container">
         <tbody>{rows}</tbody>
-      </table>
-    </div>
+      </table> */}
+      <div className="tracks-container">
+       {musicCards}
+      </div>
+    </section>
   );
 };
 
