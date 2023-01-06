@@ -27,10 +27,10 @@ const Tracks = ({ music }) => {
   musicCards.forEach((card) => {
     if (card.props.genre !== lastGenre) {
       rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
-    };
+    }
     rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
-
-      lastGenre = card.props.genre;
+    
+    lastGenre = card.props.genre;
   });
 
   return (

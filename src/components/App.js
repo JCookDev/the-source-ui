@@ -4,6 +4,7 @@ import { Route, Link } from "react-router-dom";
 import Form from "../components/Form/Form";
 import Tracks from "../components/Tracks/Tracks";
 import NavBar from "./NavBar/NavBar";
+import { getMusic, postMusic } from "./APIcalls/APIcalls";
 import "./App.css";
 
 class App extends Component {
@@ -16,17 +17,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/music")
-      .then((response) => response.json())
-      .then((data) => this.setState({ music: data.music }))
-      .catch((error) =>
-        this.setState({ error: "Oops, something went wrong. Please try again later." })
-      );
+      getMusic()
+      .then(data => {
+        this.setState({ music: data.music})
+      })
+      .catch(error => {
+        this.setState({error:"Oops, something went wrong. Please try again later."})
+      })
   }
 
   addMusic = (newMusic) => {
-    this.setState({ music: [...this.state.music, newMusic] });
-  };
+    postMusic(newMusic)
+    .then(data => {
+      this.setState({ music: data})
+    })
+  }
 
   render() {
     return (
