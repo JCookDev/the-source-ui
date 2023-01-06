@@ -26,14 +26,13 @@ const Tracks = ({ music }) => {
 
   musicCards.forEach((card) => {
     if (card.props.genre !== lastGenre) {
-      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.id} />);
+      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
     };
-    rows.push(<MusicCardRow musicCard={card} key={card.props.name}/>);
+    rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
 
       lastGenre = card.props.genre;
   });
 
-  console.log("ORGANIZED CARDS", rows);
   return (
     <section className="tracks-section">
       <table className="tracks-container">
