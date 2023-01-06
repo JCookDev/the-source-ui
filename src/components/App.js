@@ -28,11 +28,7 @@ class App extends Component {
   addMusic = (newMusic) => {
     postMusic(newMusic)
     .then(data => {
-      if(data.id) {
-        this.setState({ music: [...this.state.music, data], error: ""})
-      } else {
-        this.setState({error:"Oops, something went wrong. Please try again later."})
-      }
+      this.setState({ music: data})
     })
   }
 
