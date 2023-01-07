@@ -5,11 +5,11 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      coverArt: "", 
+      coverart: "", 
       artist: "",
       genre: "",
       title: "",
-      audioFile: ""
+      audiofile: ""
     }
   }
 
@@ -20,7 +20,6 @@ class Form extends Component {
   submitMusic = event => {
     event.preventDefault()
     const newMusic = {
-      id: Date.now(),
       ...this.state
     }
     this.props.addMusic(newMusic)
@@ -28,7 +27,7 @@ class Form extends Component {
   }
 
   clearForm = () => {
-    this.setState({coverArt: "", artist: "", genre: "", title: "", audioFile: ""})
+    this.setState({coverart: "", artist: "", genre: "", title: "", audiofile: ""})
   }
 
   render() {
@@ -37,7 +36,7 @@ class Form extends Component {
         <input
           type="text"
           placeholder="Enter Cover Art URL"
-          name="coverArt"
+          name="coverart"
           value={this.state.coverArt}
           onChange={event => this.handleChange(event)}
         />
@@ -68,7 +67,7 @@ class Form extends Component {
         <input
           type="text"
           placeholder="Enter Audio File Link"
-          name="audioFile"
+          name="audiofile"
           value={this.state.audioFile}
           onChange={event => this.handleChange(event)}
         />

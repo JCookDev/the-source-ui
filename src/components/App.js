@@ -28,7 +28,8 @@ class App extends Component {
 
   addMusic = (newMusic) => {
     postMusic(newMusic).then((data) => {
-      this.setState({ music: data });
+      console.log("data", [...this.state.music, data])
+      this.setState({ music: [...this.state.music, data] });
     });
   };
 
