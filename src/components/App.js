@@ -19,7 +19,7 @@ class App extends Component {
   componentDidMount() {
     getMusic()
       .then((data) => {
-        this.setState({ music: data.music });
+        this.setState({ music: data.tracks });
       })
       .catch((error) => {
         this.setState({ error: "Oops, something went wrong. Please try again later." });
