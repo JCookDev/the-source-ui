@@ -37,7 +37,7 @@ class Form extends Component {
           type="text"
           placeholder="Enter Cover Art URL"
           name="coverart"
-          value={this.state.coverArt}
+          value={this.state.coverart}
           onChange={event => this.handleChange(event)}
         />
 
@@ -68,7 +68,7 @@ class Form extends Component {
           type="text"
           placeholder="Enter Audio File Link"
           name="audiofile"
-          value={this.state.audioFile}
+          value={this.state.audiofile}
           onChange={event => this.handleChange(event)}
         />
 
