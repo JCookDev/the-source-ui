@@ -20,6 +20,7 @@ class Form extends Component {
   submitMusic = event => {
     event.preventDefault()
     const newMusic = {
+      id: Date.now(),
       ...this.state
     }
     this.props.addMusic(newMusic)
