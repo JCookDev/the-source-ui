@@ -9,7 +9,7 @@ const Tracks = ({ music }) => {
   // let lastGenre = null;
 
   const musicCards = music.map((song) => {
-    console.log(song)
+    // console.log(song)
     return (
       <Card
         id={song.id}

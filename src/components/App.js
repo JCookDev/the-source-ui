@@ -19,6 +19,8 @@ class App extends Component {
   componentDidMount() {
     getMusic()
       .then((data) => {
+        // console.log("DATA HERE======", data)
+        // console.log("DATA.TRACKS======", data.tracks)
         this.setState({ music: data.tracks });
       })
       .catch((error) => {
@@ -27,10 +29,15 @@ class App extends Component {
   }
 
   addMusic = (newMusic) => {
-    postMusic(newMusic).then((data) => {
-      console.log("data", [...this.state.music, data])
+    postMusic(newMusic)
+    .then((data) => {
+      console.log("data HERE----", data)
       this.setState({ music: [...this.state.music, data] });
-    });
+    })
+    .catch( err => {
+      this.setState({error: err})
+      // console.log(err.statusText)
+    })
   };
 
   render() {

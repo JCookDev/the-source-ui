@@ -13,10 +13,15 @@ export const getMusic = () => {
 export const postMusic = (newMusic) => {
   return fetch(`${baseURL}/api/v1/music`, {
     method: "POST",
+    body: JSON.stringify(newMusic),
     headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newMusic)
+      "Content-Type": "application/JSON"
+    }})
+  .then(response => {
+    if (!response.ok) {
+      // console.log("API CALLS ERROR======", response.statusText)
+      throw new Error(response.status)
+    }
+    return response.json()
   })
-  .then(response => response.json())
 }
