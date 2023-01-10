@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Form extends Component {
@@ -22,7 +21,6 @@ class Form extends Component {
     const newMusic = {
       ...this.state,
     };
-    console.log("ADD NEW MUSIC", newMusic);
     this.props.addMusic(newMusic);
     this.clearForm();
   };
