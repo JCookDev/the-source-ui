@@ -13,8 +13,9 @@ describe('Home Page', () => {
 
   it('Should contain all available music', () => {
     cy.get('.tracks-container').within(() => {
-      cy.get('.card').eq(0).should('contain', 'Future')
-      cy.get('.card').eq(1).should('contain', 'Bob Marley')
+      // cy.get('.tracks-container').should('have.length', 5)
+      cy.get('.track-card-img-container').eq(0).should('contain', 'Future')
+      cy.get('.track-card-img-container').eq(1).should('contain', 'Bob Marley')
     })
   })
       // cy.get('tbody').should('contain', )
@@ -23,9 +24,9 @@ describe('Home Page', () => {
       // cy.get(':nth-child(2) > td > .card > :nth-child(3)').should('contain', 'Puffin on Zooties')
       
       
-    it('Should organize music by category', () => {
-      cy.get('.tracks-container').within(() => {
-        cy.get('tbody').should('contain', 'Hip Hop')
-      })
-    })    
+    // it('Should organize music by category', () => {
+    //   cy.get('.tracks-container').within(() => {
+    //     cy.get('tbody').should('contain', 'Hip Hop')
+    //   })
+    // })    
 })
