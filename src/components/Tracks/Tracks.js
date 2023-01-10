@@ -1,44 +1,46 @@
 import React from "react";
 import Card from "../Card/Card";
-import MusicGenreRow from "../MusicGenreRow/MusicGenreRow";
-import MusicCardRow from "../MusicCardRow/MusicCardRow";
+// import MusicGenreRow from "../MusicGenreRow/MusicGenreRow";
+// import MusicCardRow from "../MusicCardRow/MusicCardRow";
 import "../Tracks/Tracks.css";
 
 const Tracks = ({ music }) => {
-  const rows = [];
-  let lastGenre = null;
+  // const rows = [];
+  // let lastGenre = null;
 
   const musicCards = music.map((song) => {
+    console.log(song)
     return (
       <Card
         id={song.id}
         key={song.id}
-        coverArt={song.coverArt}
+        coverart={song.coverArt}
         artist={song.artist}
         genre={song.genre}
         title={song.title}
-        audioFile={song.audioFile}
+        audiofile={song.audioFile}
       />
     );
   });
-  console.log("Music Cards", musicCards);
 
-  musicCards.forEach((card) => {
-    if (card.props.genre !== lastGenre) {
-      rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.id} />);
-    };
-    rows.push(<MusicCardRow musicCard={card} key={card.props.name}/>);
+  // musicCards.forEach((card) => {
+  //   if (card.props.genre !== lastGenre) {
+  //     rows.push(<MusicGenreRow genre={card.props.genre} key={card.props.genre} />);
+  //   }
+  //   rows.push(<MusicCardRow musicCard={card} key={card.props.id}/>);
+    
+  //   lastGenre = card.props.genre;
+  // });
 
-      lastGenre = card.props.genre;
-  });
-
-  console.log("ORGANIZED CARDS", rows);
   return (
-    <div>
-      <table className="tracks-container">
+    <section className="tracks-section">
+      {/* <table className="tracks-container">
         <tbody>{rows}</tbody>
-      </table>
-    </div>
+      </table> */}
+      <div className="tracks-container">
+       {musicCards}
+      </div>
+    </section>
   );
 };
 

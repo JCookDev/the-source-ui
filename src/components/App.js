@@ -1,55 +1,60 @@
 import React from "react";
 import { Component } from "react";
+import { Route, Link, Switch } from "react-router-dom";
+import Form from "../components/Form/Form";
 import Tracks from "../components/Tracks/Tracks";
+import NavBar from "./NavBar/NavBar";
+import { getMusic, postMusic } from "./APIcalls/APIcalls";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      music: [
-        {
-          id: 1,
-          coverArt: "image",
-          artist: "Future",
-          genre: "Hip-Hop",
-          title: "Puffin On Zooties",
-          audioFile: "file",
-        },
-        {
-          id: 2,
-          coverArt: "image",
-          artist: "Bob Marley",
-          genre: "Hip-Hop",
-          title: "Sprite",
-          audioFile: "file",
-        },
-        {
-          id: 3,
-          coverArt: "image",
-          artist: "Miss Aphrodite",
-          genre: "R&B",
-          title: "Your Hands",
-          audioFile: "file",
-        },
-        {
-          id: 4,
-          coverArt: "image",
-          artist: "Bobby Blue Bland",
-          genre: "Blues",
-          title: "Ain't No Sunshine When Shes Gone",
-          audioFile: "file",
-        },
-      ],
+      error: "",
+      music: [],
     };
   }
 
+  componentDidMount() {
+    getMusic()
+      .then((data) => {
+        this.setState({ music: data.tracks });
+      })
+      .catch((error) => {
+        this.setState({ error: "Oops, something went wrong. Please try again later." });
+      });
+  }
+
+  addMusic = (newMusic) => {
+    postMusic(newMusic).then((data) => {
+      console.log("data", [...this.state.music, data])
+      this.setState({ music: [...this.state.music, data] });
+    });
+  };
+
   render() {
     return (
-      <main className="App">
-        <h1>The Source</h1>
-        <Tracks music={this.state.music} />
-      </main>
+      <div className="App">
+        <NavBar />
+        <main>
+          {this.state.error ? (
+            <h2>{this.state.error}</h2>
+          ) : (
+            <Switch>
+              <Route exact path="/">
+                <Link to="/form">
+                  <button className="addMusicButton">Add my Music!</button>
+                </Link>
+                <Tracks music={this.state.music} />
+              </Route>
+              <Route exact path="/form">
+                <Form addMusic={this.addMusic} />
+              </Route>
+            </Switch>
+          )}
+        </main>
+      </div>
     );
   }
 }
