@@ -1,15 +1,21 @@
-import React from 'react';
-import '../Card/Card.css';
+import React from "react";
+import "../Card/Card.css";
 
-const Card = ({ coverArt, artist, genre, title, audioFile}) => {
+const Card = ({ coverart, artist, genre, title, audiofile }) => {
+  console.log(coverart);
   return (
-    <div className='card'>
-      <h2>{artist}</h2>  
-      <p>Cover Art Goes Here!</p>
-      <p> Title: {title} </p>
-      <p>  Genre: {genre} </p>
+    <div className="track-card">
+      <div className="track-card-img-container">
+        <div className="cover-text">
+          <h2>{artist}</h2>
+          <p> Title: {title} </p>
+          <p> Genre: {genre} </p>
+          <p> Audio File: {audiofile} </p>
+        </div>
+        <img src={coverart} alt="music img" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Card;

@@ -1,13 +1,21 @@
 header {
-    align-items: center;
-    display: flex;
-    height: 7rem;
-    justify-content: center;
-    outline: 1px solid red;
-    /* position: fixed; */
-    width: 100%;
+  align-items: center;
+  display: flex;
+  height: 7rem;
+  justify-content: center;
+  /* outline: 1px solid red; */
+  /* position: fixed; */
+  width: 100%;
 }
 
 h1 {
-    margin: 0;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Rubik", sans-serif;
+  color: rgb(119, 188, 87);
+  margin: 0;
+  font-size: 4rem;
 }
+
+.active {
+    color: rgb(119, 188, 87);
+  }

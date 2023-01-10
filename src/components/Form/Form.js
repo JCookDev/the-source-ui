@@ -1,35 +1,37 @@
-import { Component } from 'react';
-import './Form.css';
+import { Component } from "react";
+import { Link } from "react-router-dom";
+import "./Form.css";
 
 class Form extends Component {
   constructor() {
     super();
     this.state = {
-      coverart: "", 
+      coverart: "",
       artist: "",
       genre: "",
       title: "",
-      audiofile: ""
-    }
+      audiofile: "",
+    };
   }
 
-  handleChange = event => {
-    this.setState({[event.target.name]: event.target.value})
-  }
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-  submitMusic = event => {
-    event.preventDefault()
+  submitMusic = (event) => {
+    // event.preventDefault();
     const newMusic = {
-      id: Date.now(),
-      ...this.state
-    }
-    this.props.addMusic(newMusic)
-    this.clearForm()
-  }
+      // id: Date.now(),
+      ...this.state,
+    };
+    console.log("ADD NEW MUSIC", newMusic);
+    this.props.addMusic(newMusic);
+    this.clearForm();
+  };
 
   clearForm = () => {
-    this.setState({coverart: "", artist: "", genre: "", title: "", audiofile: ""})
-  }
+    this.setState({ coverart: "", artist: "", genre: "", title: "", audiofile: "" });
+  };
 
   render() {
     return (
@@ -39,7 +41,8 @@ class Form extends Component {
           placeholder="Enter Cover Art URL"
           name="coverart"
           value={this.state.coverart}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
+          required
         />
 
         <input
@@ -47,10 +50,11 @@ class Form extends Component {
           placeholder="Enter Artist Name"
           name="artist"
           value={this.state.artist}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
+          required
         />
 
-        <select name="genre" id="genre" onChange={event => this.handleChange(event)}>
+        <select name="genre" id="genre" onChange={(event) => this.handleChange(event)}>
           <option value="">Choose your Genre...</option>
           <option value="Hip-Hop">Hip-Hop</option>
           <option value="R&B">R&B</option>
@@ -62,7 +66,8 @@ class Form extends Component {
           placeholder="Enter Song Title"
           name="title"
           value={this.state.title}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
+          required
         />
 
         <input
@@ -70,12 +75,25 @@ class Form extends Component {
           placeholder="Enter Audio File Link"
           name="audiofile"
           value={this.state.audiofile}
-          onChange={event => this.handleChange(event)}
+          onChange={(event) => this.handleChange(event)}
+          required
         />
-
-        <button onClick={event => this.submitMusic(event)}>Submit my Music!</button>
+        {/* <Link to="/"> */}
+        <button
+          onClick={(event) => this.submitMusic(event)}
+          disabled={
+            !this.state.coverart ||
+            !this.state.artist ||
+            !this.state.genre ||
+            !this.state.title ||
+            !this.state.audiofile
+          }
+        >
+          Submit my Music!
+        </button>
+        {/* </Link> */}
       </form>
-    )
+    );
   }
 }
 

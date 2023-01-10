@@ -9,16 +9,16 @@ const Tracks = ({ music }) => {
   // let lastGenre = null;
 
   const musicCards = music.map((song) => {
-    console.log(song)
+    // console.log(song)
     return (
       <Card
         id={song.id}
         key={song.id}
-        coverart={song.coverArt}
+        coverart={song.coverart}
         artist={song.artist}
         genre={song.genre}
         title={song.title}
-        audiofile={song.audioFile}
+        audiofile={song.audiofile}
       />
     );
   });

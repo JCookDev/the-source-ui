@@ -17,13 +17,29 @@
 main {
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: 88vh;
   justify-content: center;
-  outline: 1px solid yellow;
+  /* outline: 1px solid yellow; */
   /* padding-top: 10rem; */
   width: 100%;
 }
 
+.addMusicButton {
+  color: rgb(176, 236, 124);
+  background: linear-gradient(
+    180deg,
+    rgba(118, 143, 49, 1) 0%,
+    rgba(81, 113, 40, 1) 58%,
+    rgba(58, 108, 37, 1) 100%
+  );
+  border: none;
+  border-radius: 10px;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Rubik', sans-serif;
+  height: 3rem;
+  width: 7rem;
+}
 
 /* KEEP FOR IDEAS BUT DELETE IN END */
 
