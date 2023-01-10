@@ -1,6 +1,6 @@
 describe('Home Page Flows', () => {
   beforeEach(() => {
-    cy.intercept('http://localhost:3001/api/v1/music', {
+    cy.intercept('https://the-source-backend.herokuapp.com/api/v1/music', {
       method: 'GET',
       fixture: '../fixtures/tracks.json'
     })

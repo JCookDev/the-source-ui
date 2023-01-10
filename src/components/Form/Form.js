@@ -56,6 +56,22 @@ class Form extends Component {
           <option value="R&B">R&B</option>
           <option value="Blues">Blues</option>
           <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Indie">Indie</option>
+          <option value="FilmScore">FilmScore</option>
+          <option value="Classical">Classical</option>
+          <option value="Chillout">Chillout</option>
+          <option value="Ambient">Ambient</option>
+          <option value="Folk">Folk</option>
+          <option value="Metal">Metal</option>
+          <option value="Latin">Latin</option>
+          <option value="Reggae">Reggae</option>
+          <option value="Punk">Punk</option>
+          <option value="Country">Country</option>
+          <option value="House">House</option>
+          <option value="Techno">Techno</option>
         </select>
 
         <input
