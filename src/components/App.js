@@ -20,7 +20,7 @@ class App extends Component {
     getMusic()
       .then((data) => {
         // console.log("DATA HERE======", data)
-        // console.log("DATA.TRACKS======", data.tracks)
+        console.log("DATA.TRACKS======", data.tracks)
         this.setState({ music: data.tracks });
       })
       .catch((error) => {
