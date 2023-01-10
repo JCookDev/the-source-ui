@@ -19,7 +19,6 @@ export const postMusic = (newMusic) => {
     }})
   .then(response => {
     if (!response.ok) {
-      // console.log("API CALLS ERROR======", response.statusText)
       throw new Error(response.status)
     }
     return response.json()

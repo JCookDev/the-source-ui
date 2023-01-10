@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Form extends Component {
@@ -19,12 +18,9 @@ class Form extends Component {
   };
 
   submitMusic = (event) => {
-    // event.preventDefault();
     const newMusic = {
-      // id: Date.now(),
       ...this.state,
     };
-    console.log("ADD NEW MUSIC", newMusic);
     this.props.addMusic(newMusic);
     this.clearForm();
   };
@@ -59,6 +55,7 @@ class Form extends Component {
           <option value="Hip-Hop">Hip-Hop</option>
           <option value="R&B">R&B</option>
           <option value="Blues">Blues</option>
+          <option value="Rock">Rock</option>
         </select>
 
         <input
@@ -78,8 +75,8 @@ class Form extends Component {
           onChange={(event) => this.handleChange(event)}
           required
         />
-        {/* <Link to="/"> */}
         <button
+          className="submitMusicButton"
           onClick={(event) => this.submitMusic(event)}
           disabled={
             !this.state.coverart ||
@@ -91,7 +88,6 @@ class Form extends Component {
         >
           Submit my Music!
         </button>
-        {/* </Link> */}
       </form>
     );
   }
