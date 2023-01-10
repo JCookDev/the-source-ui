@@ -3,7 +3,6 @@ import Card from "../Card/Card";
 import "../Tracks/Tracks.css";
 
 const Tracks = ({ music, removeTrack }) => {
-
   const musicCards = music.map((song, index) => {
     return (
       <Card

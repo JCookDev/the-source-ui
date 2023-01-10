@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Form extends Component {
@@ -22,7 +21,6 @@ class Form extends Component {
     const newMusic = {
       ...this.state,
     };
-    console.log("ADD NEW MUSIC", newMusic);
     this.props.addMusic(newMusic);
     this.clearForm();
   };
@@ -57,6 +55,23 @@ class Form extends Component {
           <option value="Hip-Hop">Hip-Hop</option>
           <option value="R&B">R&B</option>
           <option value="Blues">Blues</option>
+          <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Indie">Indie</option>
+          <option value="FilmScore">FilmScore</option>
+          <option value="Classical">Classical</option>
+          <option value="Chillout">Chillout</option>
+          <option value="Ambient">Ambient</option>
+          <option value="Folk">Folk</option>
+          <option value="Metal">Metal</option>
+          <option value="Latin">Latin</option>
+          <option value="Reggae">Reggae</option>
+          <option value="Punk">Punk</option>
+          <option value="Country">Country</option>
+          <option value="House">House</option>
+          <option value="Techno">Techno</option>
         </select>
 
         <input
@@ -76,8 +91,8 @@ class Form extends Component {
           onChange={(event) => this.handleChange(event)}
           required
         />
-        {/* <Link to="/"> */}
         <button
+          className="submitMusicButton"
           onClick={(event) => this.submitMusic(event)}
           disabled={
             !this.state.coverart ||
@@ -89,7 +104,6 @@ class Form extends Component {
         >
           Submit my Music!
         </button>
-        {/* </Link> */}
       </form>
     );
   }

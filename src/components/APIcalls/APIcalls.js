@@ -1,5 +1,5 @@
-const baseURL = 'http://localhost:3001'
-// const baseURL = 'https://the-source-backend.herokuapp.com'
+
+const baseURL = 'https://the-source-backend.herokuapp.com'
 
 export const getMusic = () => {
   return fetch(`${baseURL}/api/v1/music`)

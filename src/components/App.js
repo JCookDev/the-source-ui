@@ -29,7 +29,6 @@ class App extends Component {
   addMusic = (newMusic) => {
     postMusic(newMusic)
     .then((data) => {
-      console.log("data HERE----", data)
       this.setState({ music: [...this.state.music, data] });
     })
     .catch( err => {
