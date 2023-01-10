@@ -9,8 +9,8 @@
   );
   height: 100vh;
   position: fixed;
-  overflow: scroll;
   text-align: center;
+  overflow: scroll;
   width: 100vw;
 }
 
@@ -20,8 +20,6 @@ main {
   flex-direction: column;
   height: 88vh;
   justify-content: center;
-  /* outline: 1px solid yellow; */
-  /* padding-top: 10rem; */
   width: 100%;
 }
 
@@ -39,21 +37,4 @@ main {
   font-family: 'Rubik', sans-serif;
   height: 3rem;
   width: 7rem;
-}
-
-/* KEEP FOR IDEAS BUT DELETE IN END */
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
