@@ -19,7 +19,6 @@ class App extends Component {
   componentDidMount() {
     getMusic()
       .then((data) => {
-        // console.log("DATA HERE======", data)
         console.log("DATA.TRACKS======", data.tracks)
         this.setState({ music: data.tracks });
       })
@@ -36,7 +35,6 @@ class App extends Component {
     })
     .catch( err => {
       this.setState({error: err})
-      // console.log(err.statusText)
     })
   };
 

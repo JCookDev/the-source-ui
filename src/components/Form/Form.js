@@ -19,9 +19,7 @@ class Form extends Component {
   };
 
   submitMusic = (event) => {
-    // event.preventDefault();
     const newMusic = {
-      // id: Date.now(),
       ...this.state,
     };
     console.log("ADD NEW MUSIC", newMusic);
@@ -78,7 +76,6 @@ class Form extends Component {
           onChange={(event) => this.handleChange(event)}
           required
         />
-        {/* <Link to="/"> */}
         <button
           onClick={(event) => this.submitMusic(event)}
           disabled={
@@ -91,7 +88,6 @@ class Form extends Component {
         >
           Submit my Music!
         </button>
-        {/* </Link> */}
       </form>
     );
   }

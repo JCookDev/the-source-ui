@@ -12,10 +12,10 @@ describe('Home Page', () => {
   })
 
   it('Should contain all available music', () => {
-    cy.get('.tracks-container').within(() => {
-      // cy.get('.tracks-container').should('have.length', 5)
-      cy.get('.track-card-img-container').eq(0).should('contain', 'Future')
-      cy.get('.track-card-img-container').eq(1).should('contain', 'Bob Marley')
+    cy.get('.tracks-section').within(() => {
+      cy.get('.tracks-container >').should('have.length', 5)
+        .get('.cover-text').eq(0).should('contain', 'Future')
+        .get('.cover-text').eq(1).should('contain', 'Bob Marley')
     })
   })
       // cy.get('tbody').should('contain', )
