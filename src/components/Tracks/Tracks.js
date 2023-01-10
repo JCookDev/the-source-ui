@@ -14,11 +14,11 @@ const Tracks = ({ music }) => {
       <Card
         id={song.id}
         key={song.id}
-        coverart={song.coverArt}
+        coverart={song.coverart}
         artist={song.artist}
         genre={song.genre}
         title={song.title}
-        audiofile={song.audioFile}
+        audiofile={song.audiofile}
       />
     );
   });
