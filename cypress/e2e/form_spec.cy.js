@@ -79,7 +79,7 @@ describe('Form Flows', () => {
     cy.get('h1').contains('The Source').click()
     cy.request({
       method: 'POST',
-      url: 'https://the-source-backend.herokuapp.com/api/v1/music',
+      url: 'http://localhost:3001/api/v1/music',
       form: true,
       body: {
         "coverart": "https://upload.wikimedia.org/wikipedia/en/f/f5/Thestranger1977.jpg",
@@ -91,7 +91,7 @@ describe('Form Flows', () => {
     })
 
     it('Should display new track after clicking The Source to navigate back home')
-    cy.intercept('https://the-source-backend.herokuapp.com/api/v1/music', {
+    cy.intercept('http://localhost:3001/api/v1/music', {
       method: 'POST',
       fixture: '../fixtures/post.json'
     })
