@@ -55,6 +55,7 @@ class Form extends Component {
           <option value="Hip-Hop">Hip-Hop</option>
           <option value="R&B">R&B</option>
           <option value="Blues">Blues</option>
+          <option value="Rock">Rock</option>
         </select>
 
         <input
@@ -75,6 +76,7 @@ class Form extends Component {
           required
         />
         <button
+          className="submitMusicButton"
           onClick={(event) => this.submitMusic(event)}
           disabled={
             !this.state.coverart ||
