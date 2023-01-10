@@ -1,5 +1,52 @@
-.card {
-    box-sizing: border-box;
-    border: 3px solid black;
-    padding: 10px;
+.track-card {
+  box-sizing: border-box;
+  border: 3px solid rgb(119, 188, 87);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23), 0 2px 2px hsl(0deg 0% 0% / 0.23),
+  0 4px 4px hsl(0deg 0% 0% / 0.23), 0 8px 8px hsl(0deg 0% 0% / 0.23),
+  0 16px 16px hsl(0deg 0% 0% / 0.23);
+  border-radius: 10px;
+  padding: 10px;
+  padding: 0.3rem;
+  width: 21rem;
+}
+
+.track-card-img-container {
+  border: 5px;
+  border-radius: 10px;
+  height: 20rem;
+  overflow: hidden;
+  width: 20rem;
+}
+
+.track-card:hover {
+  box-shadow: 0.3rem 0.3rem 0.3rem rgb(119, 188, 87);
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out;
+}
+
+.cover-text {
+  align-items: flex-start;
+  background-color: rgba(57, 57, 59, 0.628);
+  border-radius: 10px;
+  color: rgb(119, 188, 87);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 1rem;
+  padding: .5rem;
+  position: absolute;
+}
+
+.cover-text h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.cover-text p {
+  font-size: 0.8rem;
+  margin: 0 0 0 0.5rem;
+}
+
+.track-card-img-container img {
+  height: auto;
+  inline-size: 100%;
+  object-fit: cover;
 }
