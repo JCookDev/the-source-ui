@@ -4,7 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import Form from "../components/Form/Form";
 import Tracks from "../components/Tracks/Tracks";
 import NavBar from "./NavBar/NavBar";
-import { getMusic, postMusic, deleteMusic } from "./APIcalls/APIcalls";
+import { getMusic, postMusic } from "./APIcalls/APIcalls";
 import "./App.css";
 
 class App extends Component {
@@ -36,19 +36,6 @@ class App extends Component {
     })
   };
 
-  removeTrack(id) {
-    deleteMusic(id)
-      .then(response => {
-        if (response.ok) {
-          const filteredIdeas = this.state.music.filter(idea => idea.id !== id);
-          
-          this.setState({ ideas: filteredIdeas, error: '' });
-        } else {
-          this.setState({ error: `There was a problem deleting that idea!` })
-        }
-      })
-  }
-
   render() {
     return (
       <div className="App">
@@ -62,7 +49,7 @@ class App extends Component {
                 <Link to="/form">
                   <button className="addMusicButton">Add my Music!</button>
                 </Link>
-                <Tracks music={this.state.music} removeTrack={this.removeTrack} />
+                <Tracks music={this.state.music} />
               </Route>
               <Route exact path="/form">
                 <Form addMusic={this.addMusic} />

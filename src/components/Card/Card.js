@@ -1,7 +1,7 @@
 import React from "react";
 import "../Card/Card.css";
 
-const Card = ({ id, musicIndex, coverart, artist, genre, title, audiofile, removeTrack }) => {
+const Card = ({ id, coverart, artist, genre, title, audiofile }) => {
 
   return (
     <div className="track-card">
@@ -11,9 +11,6 @@ const Card = ({ id, musicIndex, coverart, artist, genre, title, audiofile, remov
           <p> Title: {title} </p>
           <p> Genre: {genre} </p>
           <p> Audio File: {audiofile} </p>
-        </div>
-        <div className="delete-card-icon" onClick={() => removeTrack(id)}>
-          <span className="material-symbols-outlined">delete</span>
         </div>
         <img src={coverart} alt="music img" />
       </div>
