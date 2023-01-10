@@ -1,3 +1,4 @@
+
 const baseURL = 'https://the-source-backend.herokuapp.com'
 
 export const getMusic = () => {
@@ -23,4 +24,25 @@ export const postMusic = (newMusic) => {
     }
     return response.json()
   })
+}
+
+export const deleteMusic = async (musicId) => {
+  const deleteReq = {
+    method: "DELETE"
+  };
+  try {
+    const response = await fetch(`${baseURL}/api/v1/music/${musicId}`, deleteReq);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(`DELETE Error: ${err}`)
+  }
+  // return fetch(`${baseURL}/api/v1/music/${musicId}`, {
+  //   method: "DELETE",
+  // })
+  // .then(response => {
+  //   if(!response.ok) {
+  //     throw new Error(response.status)
+  //   }
+  // })
 }

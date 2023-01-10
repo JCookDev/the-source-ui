@@ -1,10 +1,10 @@
 .track-card {
-  box-sizing: border-box;
   border: 3px solid rgb(119, 188, 87);
+  border-radius: 10px;
+  box-sizing: border-box;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23), 0 2px 2px hsl(0deg 0% 0% / 0.23),
   0 4px 4px hsl(0deg 0% 0% / 0.23), 0 8px 8px hsl(0deg 0% 0% / 0.23),
   0 16px 16px hsl(0deg 0% 0% / 0.23);
-  border-radius: 10px;
   padding: 10px;
   padding: 0.3rem;
   width: 21rem;
@@ -24,7 +24,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-.cover-text {
+.cover-text, .delete-card-icon {
   align-items: flex-start;
   background-color: rgba(57, 57, 59, 0.628);
   border-radius: 10px;
@@ -49,4 +49,12 @@
   height: auto;
   inline-size: 100%;
   object-fit: cover;
+}
+
+.delete-card-icon {
+    bottom: 0;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    right: 0;
 }

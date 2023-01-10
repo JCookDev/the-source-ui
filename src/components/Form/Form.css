@@ -1,4 +1,5 @@
 form {
+  align-items: center;
   background: linear-gradient(
     180deg,
     rgba(118, 143, 49, 1) 0%,
@@ -6,17 +7,14 @@ form {
     rgba(58, 108, 37, 1) 100%
   );
   border-radius: 10px;
-  /* box-shadow: 0 0 0 2px rgb(85,26,139); */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.23), 0 2px 2px hsl(0deg 0% 0% / 0.23),
     0 4px 4px hsl(0deg 0% 0% / 0.23), 0 8px 8px hsl(0deg 0% 0% / 0.23),
     0 16px 16px hsl(0deg 0% 0% / 0.23);
   display: flex;
   flex-direction: column;
   height: 25rem;
-  /* outline: 1px solid red; */
-  width: 50rem;
-  align-items: center;
   justify-content: space-evenly;
+  width: 50rem;
 }
 
 form input,

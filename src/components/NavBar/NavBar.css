@@ -7,11 +7,11 @@ header {
 }
 
 h1 {
+  color: rgb(119, 188, 87);
   font-family: "Bebas Neue", cursive;
   font-family: "Rubik", sans-serif;
-  color: rgb(119, 188, 87);
-  margin: 0;
   font-size: 4rem;
+  margin: 0;
 }
 
 .active {
